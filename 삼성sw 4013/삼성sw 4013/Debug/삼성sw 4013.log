@@ -1,0 +1,3 @@
+﻿  4013.cpp
+c:\users\daeha\desktop\algorithm\삼성sw 4013\삼성sw 4013\4013.cpp(263): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  삼성sw 4013.vcxproj -> C:\Users\DaeHa\Desktop\Algorithm\삼성sw 4013\Debug\삼성sw 4013.exe
