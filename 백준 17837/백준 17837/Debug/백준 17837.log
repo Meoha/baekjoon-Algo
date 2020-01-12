@@ -1,0 +1,7 @@
+﻿  17837.cpp
+c:\users\daeha\desktop\algorithm\백준 17837\백준 17837\17837.cpp(70): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\daeha\desktop\algorithm\백준 17837\백준 17837\17837.cpp(108): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\daeha\desktop\algorithm\백준 17837\백준 17837\17837.cpp(163): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\daeha\desktop\algorithm\백준 17837\백준 17837\17837.cpp(214): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+c:\users\daeha\desktop\algorithm\백준 17837\백준 17837\17837.cpp(227): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  백준 17837.vcxproj -> C:\Users\DaeHa\Desktop\Algorithm\백준 17837\Debug\백준 17837.exe
