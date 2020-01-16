@@ -16,6 +16,7 @@ queue<pair<int, int>> q; //바이러스 큐
 vector<pair<int, int>> v; //처음 바이러스 위치
 vector<pair<int, int>> wall; //벽
 
+//초기화
 void init() {
 
 	for (int i = 0; i < v.size(); i++) {
@@ -36,6 +37,7 @@ void init() {
 	return;
 }
 
+//바이러스 퍼짐
 void virus() {
 
 	while (!q.empty()) {
@@ -45,7 +47,6 @@ void virus() {
 
 		q.pop();
 
-		//바이러스가 퍼짐
 		for (int i = 0; i < 4; i++) {
 
 			int nx = x + dx[i];
@@ -114,8 +115,7 @@ int main() {
 		}
 	}
 
-	//sol
-
+	//벽 세우기
 	for (int i = 0; i < wall.size() - 2; i++) {
 		for (int j = i + 1; j < wall.size() - 1; j++) {
 			for (int k = j + 1; k < wall.size(); k++) {
@@ -134,9 +134,6 @@ int main() {
 
 	//출력
 	cout << ans << '\n';
-
-
-
 
 	return 0;
 }
