@@ -1,0 +1,6 @@
+﻿  12865.cpp
+c:\users\daeha\desktop\algorithm\백준 12865\백준 12865\12865.cpp(15): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\daeha\desktop\algorithm\백준 12865\백준 12865\12865.cpp(54): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\daeha\desktop\algorithm\백준 12865\백준 12865\12865.cpp(63): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\daeha\desktop\algorithm\백준 12865\백준 12865\12865.cpp(83): warning C4715: 'cut_pipe': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  백준 12865.vcxproj -> C:\Users\DaeHa\Desktop\Algorithm\백준 12865\Debug\백준 12865.exe
