@@ -1,87 +1,232 @@
+//두번째 풀었을 때
 #include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm>
 
 using namespace std;
 
-int k; //부등호 문자 개수
-int box[9]; //'>'일 경우 1, '<'일 경우 -1
-vector<string> ans;
+int K;
+int arr[20];
+string MAX = "-987654321";
+string MIN = "987654321";
 
-void sol(string result, int idx, int last, bool *visited) {
+void sol(int turn, int last, string s) {
 
-	if (result.length() == (k + 1)) {
+	if (s.length() == K + 1) {
 
-		ans.push_back(result);
+		if (MAX < s) {
 
-		return;
+			MAX = s;
+
+		}
+
+		if (MIN > s) {
+
+			MIN = s;
+
+		}
+
 	}
 	else {
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i <= 9; i++) {
 
-			string temp;
+			bool flag = true;
 
-			if (result.length() == 0) {
-				temp = to_string(i);
-				visited[i] = true;
-				sol(temp, 0, i, visited);
-				visited[i] = false;
-			}
-			else {
-				if (!visited[i]) {
-					if (box[idx] == -1) {
-						if (last < i) {
-							temp = result + to_string(i);
-							visited[i] = true;
-							sol(temp, idx + 1, i, visited);
-							visited[i] = false;
-						}
-					}
-					else if (box[idx] == 1) {
-						if (last > i) {
-							temp = result + to_string(i);
-							visited[i] = true;
-							sol(temp, idx + 1, i, visited);
-							visited[i] = false;
-						}
-					}
+			for (int j = 0; j < s.length(); j++) {
+
+				if (s[j] == i + '0') {
+
+					flag = false;
+					break;
+
 				}
+
+			}
+
+			if (flag) {
+
+				if (arr[turn] == 1) {
+
+					if (last < i) {
+
+						sol(turn + 1, i, s + to_string(i));
+
+					}
+
+				}
+				else if (arr[turn] == 2) {
+
+					if (last > i) {
+
+						sol(turn + 1, i, s + to_string(i));
+
+					}
+
+				}
+
 			}
 
 		}
 
 	}
 
-
+	return;
 }
 
 int main() {
 
-	cin >> k;
+	cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
 
-	for (int i = 0; i < k; i++) {
-		char temp;
+	cin >> K;
 
-		cin >> temp;
+	for (int k = 0; k < K; k++) {
 
-		if (temp == '<') {
-			box[i] = -1;
+		char c;
+
+		cin >> c;
+
+		if (c == '<') {
+
+			arr[k] = 1;
+
 		}
-		else if (temp == '>') {
-			box[i] = 1;
+		else if (c == '>') {
+
+			arr[k] = 2;
+
 		}
+
 	}
 
-	bool visited[10] = { false };
+	//sol
+	for (int a = 0; a <= 9; a++) {
 
+		sol(0, a, to_string(a));
 
-	sol("", 0, 0, visited);
+	}
 
-	sort(ans.begin(), ans.end());
-
-	cout << ans[ans.size() - 1] << endl << ans[0] << endl;
+	cout << MAX << '\n';
+	cout << MIN << '\n';
 
 	return 0;
 }
+
+/*
+처음 풀었을 때
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int K;
+int arr[20];
+string MAX = "-987654321";
+string MIN = "987654321";
+
+void sol(int turn, int last, string s) {
+
+	if (s.length() == K + 1) {
+
+		if (MAX < s) {
+
+			MAX = s;
+
+		}
+
+		if (MIN > s) {
+
+			MIN = s;
+
+		}
+
+	}
+	else {
+
+		for (int i = 0; i <= 9; i++) {
+
+			bool flag = true;
+
+			for (int j = 0; j < s.length(); j++) {
+
+				if (s[j] == i + '0') {
+
+					flag = false;
+					break;
+
+				}
+
+			}
+
+			if (flag) {
+
+				if (arr[turn] == 1) {
+
+					if (last < i) {
+
+						sol(turn + 1, i, s + to_string(i));
+						
+					}
+
+				}
+				else if (arr[turn] == 2) {
+
+					if (last > i) {
+
+						sol(turn + 1, i, s + to_string(i));
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	return;
+}
+
+int main() {
+
+	cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+
+	cin >> K;
+
+	for (int k = 0; k < K; k++) {
+
+		char c;
+
+		cin >> c;
+
+		if (c == '<') {
+
+			arr[k] = 1;
+
+		}
+		else if (c == '>') {
+
+			arr[k] = 2;
+
+		}
+
+	}
+
+	//sol
+	for (int a = 0; a <= 9; a++) {
+
+		sol(0, a, to_string(a));
+
+	}
+
+	cout << MAX << '\n';
+	cout << MIN << '\n';
+
+	return 0;
+}
+*/
